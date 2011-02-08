@@ -1,0 +1,3 @@
+target 		ttw_example
+sourcedir	src
+cflags		std=c99 Iinclude Wall pedantic
