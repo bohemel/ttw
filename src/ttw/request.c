@@ -53,8 +53,14 @@ int ttw_request_get_param(s_ttw_http_request* request, const char *key, char *va
 	if(p == NULL)
 		return 0;
 	p = strtok(p, "&");
+	if(p == NULL)
+		return 0;
 	p = strtok(p, "=");
+	if(p == NULL)
+		return 0;
 	p = strtok(NULL, "=");
+	if(p == NULL)
+		return 0;
 	strcpy(value, p);
 	return 1;
 }
