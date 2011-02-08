@@ -1,0 +1,12 @@
+ttw - Tiny (tiny) webservice
+
+(c) Joel Söderberg 2010
+
+It's a tiny tiny webserver that lets you connect callbacks and static files to a path
+and ttw serves it to the client.
+
+ttw also provides functions to fetch GET and POST parameters. 
+
+See examples for more info.
+
+MIT license
