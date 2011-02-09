@@ -1,6 +1,6 @@
 ttw - Tiny (tiny) webservice
 
-(c) Joel Söderberg 2010
+(c) Joel Söderberg 2011
 
 It's a tiny tiny webserver that lets you connect callbacks and static files to a path
 and ttw serves it to the client.
