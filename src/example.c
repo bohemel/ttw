@@ -7,7 +7,7 @@ void dynamic_test(s_ttw_http_request*);
 void dynamic_test(s_ttw_http_request* request) {
 	char value[100];
 	if(ttw_request_get_param(request, "message", value))
-		ttw_response_send("200 OK", "text/plain", request, value);
+		ttw_response_printf("200 OK", "text/plain", request, "You typed in: %s", value);
 	else
 		ttw_response_send("200 OK", "text/plain", request, "Echo");
 }

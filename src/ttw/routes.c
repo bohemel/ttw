@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "ttw/ttw.h";
+#include "ttw/ttw.h"
 
 int __NO_OF_ROUTES = 0;
 s_ttw_route* __LOADED_ROUTES;

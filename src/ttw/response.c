@@ -5,6 +5,7 @@
 #include <sys/types.h> 
 #include <sys/socket.h>
 #include <netinet/in.h>
+#include <stdarg.h>
 
 #include "ttw/ttw.h"
 #define MAX_OUTBUFFER_SIZE 1024 // 1K of headerbuffer
@@ -29,4 +30,18 @@ void ttw_response_send(const char *resp_code, const char* content_type, s_ttw_ht
 	write(request->socket_fd, body, body_len);
 
 	return;
+}
+
+void ttw_response_printf(const char *resp_code, const char* content_type, s_ttw_http_request *request, const char* format, ...)
+{
+	int maxlen = 4096;
+	va_list fmtargs;
+	char buffer[maxlen];
+	memset(buffer, 0, maxlen);
+
+	va_start(fmtargs, format);
+	vsnprintf(buffer, maxlen - 1, format, fmtargs);
+	va_end(fmtargs);
+
+	ttw_response_send(resp_code, content_type, request, buffer);	
 }
